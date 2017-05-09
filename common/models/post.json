@@ -1,0 +1,52 @@
+{
+  "name": "Post",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "donorID": {
+      "type": "string",
+      "required": true
+    },
+    "doneeID": {
+      "type": "string"
+    },
+    "postDate": {
+      "type": "date",
+      "required": true
+    },
+    "claimStatus": {
+      "type": "boolean",
+      "required": true
+    },
+    "claimDate": {
+      "type": "date"
+    },
+    "bottleCount": {
+      "type": "number"
+    },
+    "Location": {
+      "type": "geopoint",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
