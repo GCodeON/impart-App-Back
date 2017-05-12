@@ -28,7 +28,7 @@
       "type": "number"
     },
     "Location": {
-      "type": "geopoint",
+      "type": "string",
       "required": true
     }
   },
